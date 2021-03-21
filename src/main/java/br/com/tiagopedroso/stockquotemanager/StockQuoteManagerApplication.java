@@ -1,15 +1,11 @@
 package br.com.tiagopedroso.stockquotemanager;
 
-import br.com.tiagopedroso.stockquotemanager.config.EnvironmentValues;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @SpringBootApplication
-@EnableFeignClients
 public class StockQuoteManagerApplication {
 
 	private static String apiName = "Stock Quote Manager";

@@ -2,6 +2,7 @@ package br.com.tiagopedroso.stockquotemanager.service;
 
 import br.com.tiagopedroso.stockquotemanager.model.Quote;
 import br.com.tiagopedroso.stockquotemanager.model.StockQuote;
+import br.com.tiagopedroso.stockquotemanager.model.dto.StockDto;
 import br.com.tiagopedroso.stockquotemanager.model.dto.StockQuoteDto;
 import br.com.tiagopedroso.stockquotemanager.repository.QuoteRepository;
 import br.com.tiagopedroso.stockquotemanager.repository.StockQuoteRepository;
@@ -69,7 +70,6 @@ public class StockQuoteService {
 	public StockQuoteDto create(StockQuoteDto stockQuoteDto) {
 		if (stockQuoteDto != null && stockQuoteDto.getId() != null && !stockQuoteDto.getId().isEmpty()) {
 			StockQuote tranformedStockQuote = stockQuoteDto.transformToObject();
-			tranformedStockQuote.setListOfQuotes(null);
 			StockQuote savedStockQuote = stockQuoteRepository.save(tranformedStockQuote);
 
 			if (savedStockQuote != null) {
